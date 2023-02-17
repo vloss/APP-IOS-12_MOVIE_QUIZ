@@ -100,12 +100,21 @@
                                             <constraint firstAttribute="width" secondItem="ldg-Ru-QHA" secondAttribute="height" multiplier="750:535" id="pN9-TK-v4Y"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XT8-e0-kqK">
+                                        <rect key="frame" x="0.0" y="142.66666666666666" width="393" height="280.66666666666674"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="XT8-e0-kqK" firstAttribute="centerY" secondItem="ldg-Ru-QHA" secondAttribute="centerY" id="TO8-zU-ysq"/>
+                                    <constraint firstItem="XT8-e0-kqK" firstAttribute="height" secondItem="ldg-Ru-QHA" secondAttribute="height" id="UAG-Ya-jzc"/>
+                                    <constraint firstItem="XT8-e0-kqK" firstAttribute="centerX" secondItem="ldg-Ru-QHA" secondAttribute="centerX" id="V8I-PI-Dpb"/>
                                     <constraint firstItem="ldg-Ru-QHA" firstAttribute="centerX" secondItem="8ho-Sa-8xc" secondAttribute="centerX" id="eSH-7E-r1Q"/>
                                     <constraint firstItem="ldg-Ru-QHA" firstAttribute="centerY" secondItem="8ho-Sa-8xc" secondAttribute="centerY" id="h6m-wz-8Lf"/>
                                     <constraint firstItem="ldg-Ru-QHA" firstAttribute="width" secondItem="8ho-Sa-8xc" secondAttribute="width" id="p5z-ge-kmy"/>
+                                    <constraint firstItem="XT8-e0-kqK" firstAttribute="width" secondItem="ldg-Ru-QHA" secondAttribute="width" id="zJ7-cc-ErJ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -135,6 +144,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kna-Nq-1dh" secondAttribute="trailing" id="vwH-Nv-fyu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="KVA-r6-aSw" kind="show" identifier="gameOverSegue" id="2jp-Ql-raO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,19 +157,69 @@
             <objects>
                 <viewController id="KVA-r6-aSw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Exg-GT-tg4">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gameOver" translatesAutoresizingMaskIntoConstraints="NO" id="PB7-lk-wzR">
+                                <rect key="frame" x="-4" y="-4" width="401" height="791"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parabéns" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUZ-L2-FHo">
+                                <rect key="frame" x="94" y="189" width="205" height="54"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="45"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O seu total de acertos foi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4n-u0-mJt">
+                                <rect key="frame" x="101" y="251" width="191" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOk-aA-72V">
+                                <rect key="frame" x="73" y="280" width="247" height="158"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="132"/>
+                                <color key="textColor" red="1" green="1" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8q-Yb-jgc">
+                                <rect key="frame" x="20" y="713" width="353" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.32941176470588235" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="zmf-Jc-ihd"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Jogar Novamente"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="BXk-Ai-7XP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="PB7-lk-wzR" secondAttribute="bottom" constant="-4" id="9iW-Tz-YJi"/>
+                            <constraint firstItem="KOk-aA-72V" firstAttribute="centerX" secondItem="Exg-GT-tg4" secondAttribute="centerX" id="9uy-5k-sgJ"/>
+                            <constraint firstItem="PB7-lk-wzR" firstAttribute="top" secondItem="Exg-GT-tg4" secondAttribute="top" constant="-4" id="Dji-jM-2Km"/>
+                            <constraint firstItem="aUZ-L2-FHo" firstAttribute="centerX" secondItem="Exg-GT-tg4" secondAttribute="centerX" id="EYe-70-iz2"/>
+                            <constraint firstItem="BXk-Ai-7XP" firstAttribute="trailing" secondItem="L8q-Yb-jgc" secondAttribute="trailing" constant="20" id="KfX-Lz-hxr"/>
+                            <constraint firstItem="PB7-lk-wzR" firstAttribute="leading" secondItem="BXk-Ai-7XP" secondAttribute="leading" constant="-4" id="LF2-PV-u5R"/>
+                            <constraint firstItem="aUZ-L2-FHo" firstAttribute="top" secondItem="BXk-Ai-7XP" secondAttribute="top" constant="130" id="SyK-sN-3As"/>
+                            <constraint firstItem="A4n-u0-mJt" firstAttribute="centerX" secondItem="Exg-GT-tg4" secondAttribute="centerX" id="TIG-XX-9J5"/>
+                            <constraint firstItem="PB7-lk-wzR" firstAttribute="trailing" secondItem="BXk-Ai-7XP" secondAttribute="trailing" constant="4" id="VxW-e8-kLv"/>
+                            <constraint firstItem="BXk-Ai-7XP" firstAttribute="bottom" secondItem="L8q-Yb-jgc" secondAttribute="bottom" constant="30" id="WgQ-Gb-cRg"/>
+                            <constraint firstItem="A4n-u0-mJt" firstAttribute="top" secondItem="aUZ-L2-FHo" secondAttribute="bottom" constant="8" id="XQU-Bm-l7g"/>
+                            <constraint firstItem="KOk-aA-72V" firstAttribute="top" secondItem="A4n-u0-mJt" secondAttribute="bottom" constant="8" id="omq-dn-7p5"/>
+                            <constraint firstItem="L8q-Yb-jgc" firstAttribute="leading" secondItem="BXk-Ai-7XP" secondAttribute="leading" constant="20" id="yri-rY-sLH"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="qu7-an-wmf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJy-LZ-8FE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781" y="-2"/>
+            <point key="canvasLocation" x="780.91603053435108" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
         <image name="background" width="414" height="736"/>
+        <image name="gameOver" width="375" height="667"/>
         <image name="movieSound" width="414" height="295.33334350585938"/>
         <image name="music" width="23" height="23"/>
         <image name="pause" width="23" height="23"/>
