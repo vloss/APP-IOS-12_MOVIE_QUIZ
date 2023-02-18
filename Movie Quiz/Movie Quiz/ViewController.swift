@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var viTimer: UIView!
     
     var quizManager: QuizManager!
+    var quizPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,7 @@ class ViewController: UIViewController {
         quizManager = QuizManager()
         
         getNewQuiz()
+        startTimer()
     }
     
     func getNewQuiz(){
@@ -33,6 +36,40 @@ class ViewController: UIViewController {
         
         for i in 0..<round.options.count {
             btOptions[i].setTitle(round.options[i].name, for: .normal)
+        }
+        
+        playQuiz()
+    }
+    
+    func startTimer(){
+        viTimer.frame = view.frame
+        UIView.animate(withDuration: 60.0, delay: 0.0, options: .curveLinear) {
+            self.viTimer.frame.size.width = 0
+            self.viTimer.frame.origin.x = self.view.center.x // para continuar no centro da tela
+        } completion: { (sucess) in
+            self.gameOver()
+        }
+    }
+    
+    func gameOver(){
+        performSegue(withIdentifier: "gameOverSegue", sender: nil)
+        quizPlayer.stop()
+    }
+    
+    @IBAction func playQuiz(){
+        guard let round = quizManager.round else { return }
+        ivQuiz.image = UIImage(named: "movieSound")
+        
+        if let url = Bundle.main.url(forResource: "quote\(round.quiz.number)", withExtension: ".mp3"){
+            do{
+                quizPlayer =  try AVAudioPlayer(contentsOf: url)
+                quizPlayer.volume = 1
+                quizPlayer.delegate = self
+                quizPlayer.play()
+                
+            } catch {
+                
+            }
         }
     }
 
@@ -53,3 +90,9 @@ class ViewController: UIViewController {
     }
 }
 
+
+extension ViewController: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        ivQuiz.image = UIImage(named: "movieSoundPause")
+    }
+}
