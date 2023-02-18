@@ -37,6 +37,7 @@
 		B742C023299FFE660048460E /* quote15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B742C00C299FFE660048460E /* quote15.mp3 */; };
 		B742C024299FFE660048460E /* quote6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B742C00D299FFE660048460E /* quote6.mp3 */; };
 		B742C02729A00D650048460E /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B742C02629A00D650048460E /* GameOverViewController.swift */; };
+		B742C02929A051950048460E /* QuizManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B742C02829A051950048460E /* QuizManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		B742C00C299FFE660048460E /* quote15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = quote15.mp3; sourceTree = "<group>"; };
 		B742C00D299FFE660048460E /* quote6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = quote6.mp3; sourceTree = "<group>"; };
 		B742C02629A00D650048460E /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		B742C02829A051950048460E /* QuizManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				B742BFE3299FF9B30048460E /* AppDelegate.swift */,
 				B742BFE5299FF9B30048460E /* SceneDelegate.swift */,
 				B742BFE7299FF9B30048460E /* ViewController.swift */,
+				B742C02829A051950048460E /* QuizManager.swift */,
 				B742C02629A00D650048460E /* GameOverViewController.swift */,
 				B742BFE9299FF9B30048460E /* Main.storyboard */,
 				B742BFEC299FF9B60048460E /* Assets.xcassets */,
@@ -243,6 +246,7 @@
 			files = (
 				B742C02729A00D650048460E /* GameOverViewController.swift in Sources */,
 				B742BFE8299FF9B30048460E /* ViewController.swift in Sources */,
+				B742C02929A051950048460E /* QuizManager.swift in Sources */,
 				B742BFE4299FF9B30048460E /* AppDelegate.swift in Sources */,
 				B742BFE6299FF9B30048460E /* SceneDelegate.swift in Sources */,
 			);
